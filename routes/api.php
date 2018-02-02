@@ -21,3 +21,7 @@ Route::get('colour-test', function () {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/todos', function (Request $request) {
+       return $request->user()->todos;
+});
